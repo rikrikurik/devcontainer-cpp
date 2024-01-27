@@ -2,7 +2,7 @@ FROM ubuntu:20.04
 
 # Install cmake
 ENV DEBIAN_FRONTEND=noninteractive
-RUN apt update && apt install -y cmake build-essential cmake clang clang-format git libssl-dev
+RUN apt update && apt install -y cmake build-essential cmake clang clang-format git libssl-dev fish
 
 # Set the environment variable to use clang as default
 ENV CC=clang
