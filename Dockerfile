@@ -1,7 +1,12 @@
-FROM gcc:13.2.0
+FROM ubuntu:20.04
 
-# Install cmake, gdb
-RUN apt update && apt install -y clang-format cmake gdb
+# Install cmake
+ENV DEBIAN_FRONTEND=noninteractive
+RUN apt update && apt install -y cmake build-essential cmake clang clang-format git libssl-dev
+
+# Set the environment variable to use clang as default
+ENV CC=clang
+ENV CXX=clang++
 
 # Install libraries
 RUN echo "install libraries" \ 
